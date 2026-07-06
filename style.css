@@ -1,115 +1,161 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap');
-
-:root{
-    --branco: white;
-    --cor-de-fundo: #00162E;
-    --fundo-senha: #00244D;
-    --fundo-texto: #001E40;
-    --borda: #0075FF;
-    --roboto: 'Roboto', sans-serif;
-    --roboto-mono: 'Roboto Mono', monospace;
+/* Configurações Globais Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-*{
-    font-weight: 400;
-}
-
-body{
-    color: var(--branco);
-    background-color: var(--cor-de-fundo);
-    font-family: var(--roboto);
-}
-
-.titulo-principal{
-    font-family: var(--roboto-mono);
-    font-size: 32px;
-}
-
-.titulo-secundario{
-    font-size: 24px;
-}
-
-.conteudo-titulo{
-    text-align: center;
-    margin-top: 80px;
-}
-
-.conteudo-senha{
-    margin-top: 80px; 
-    background: var(--fundo-senha);
-    padding: 24px;
-    border-bottom: 6px solid var(--borda);
-}
-
-#campo-senha{
-    background-color: var(--fundo-senha);
-    border: none;
-    color: var(--branco);
-    font-family: var(--roboto-mono);
-    font-size: 40px;
-    width: 70%;
-}
-
-#campo-senha:focus{
-    outline: none;
-}
-
-.conteudo{
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.parametro{
-    background-color: var(--fundo-texto);
-    border: 2px solid var(--borda);
-    margin-top: 32px;
-    padding: 24px;
-}
-
-.parametro-titulo{
-    font-family: var(--roboto-mono);
-    font-size: 28px;
-}
-
-.parametro-senha__titulo{
-    font-size:24px;
-}
-
-.parametro-coluna__senha{
+body {
+    background-color: #f0f4f1;
+    color: #2c3e50;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    min-height: 100vh;
 }
-.parametro-senha{
-    width: 50%;
+
+/* Header */
+header {
+    background-color: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 2.5rem 1rem;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Área de Conteúdo Principal */
+.container {
+    flex: 1;
+    max-width: 800px;
+    width: 100%;
     margin: 0 auto;
+    padding: 2rem 1rem;
 }
 
-.parametro-senha-botoes{
+/* Cards de Conteúdo */
+.card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 1.8rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+    color: #1b5e20;
+    margin-bottom: 0.8rem;
+}
+
+/* Alinhamento do Título com o seu SVG */
+.header-seguranca {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
 }
 
-.parametro-senha__botao{
-    background-color: var(--fundo-texto);
-    color: var(--branco);
-    border: 2px solid var(--borda);
-    padding: 24px;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.parametro-senha__texto{
-    padding: 24px;
-    border-top: 2px solid var(--borda);
-    border-bottom: 2px solid var(--borda);
+.header-seguranca h2 {
     margin: 0;
-    font-size: 24px;
 }
 
+.icone-cadeado {
+    width: 32px;
+    height: 32px;
+}
 
-@media screen and (min-width: 768px) {
-    .parametro-coluna__senha{
-        flex-direction: row;
-    }
+/* Botões e Inputs */
+.btn {
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #1b5e20;
+}
+
+.btn:disabled {
+    background-color: #b0bec5;
+    cursor: not-allowed;
+}
+
+.input-group {
+    margin: 1.5rem 0 1rem 0;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #cfd8dc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Componentes de Status e Feedback */
+.status-box, .feedback-box {
+    background-color: #f7f9f7;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.status-text {
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+/* Barra de Progresso */
+.progress-bar-container {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    height: 12px;
+    width: 100%;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background-color: #4caf50;
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* Cores de feedback dinâmico da senha */
+.senha-fraca { color: #d32f2f; background-color: #ffebee; border-color: #ffcdd2; }
+.senha-media { color: #f57c00; background-color: #fff3e0; border-color: #ffe0b2; }
+.senha-forte { color: #388e3c; background-color: #e8f5e9; border-color: #c8e6c9; }
+
+/* Rodapé */
+footer {
+    background-color: #1b5e20;
+    color: white;
+    text-align: center;
+    padding: 1.2rem;
+    font-size: 0.9rem;
+    margin-top: auto;
 }
