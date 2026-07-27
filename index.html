@@ -1,121 +1,143 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agrinho 2026 - Soluções Digitais</title>
+    <title>Gerador de Senhas</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header>
-        <h1>Agrinho 2026</h1>
-        <p>Soluções Digitais Seguras, Funcionais e Conscientes</p>
-    </header>
+    <section class="conteudo">
 
-    <main class="container">
-        
-        <section class="card">
-            <h2>Missão IA: Sistema de Treinamento</h2>
-            <p>Desenvolva habilidades em programação web criando projetos interativos enquanto analisa o uso da IA de forma crítica.</p>
-            
-            <div class="status-box">
-                <p>Pontos de Experiência da IA: <strong id="pontos-ia">0</strong></p>
-                <div class="progress-bar-container">
-                    <div id="barra-progresso" class="progress-bar"></div>
+        <div class="conteudo-titulo">
+            <img src="unlock.svg" alt="Cadeado" width="60">
+
+            <h1 class="titulo-principal">
+                Gerador de Senhas
+            </h1>
+
+            <h2 class="titulo-secundario">
+                Gere instantaneamente uma senha aleatória e segura
+            </h2>
+        </div>
+
+        <div class="conteudo-senha">
+
+            <label for="campo-senha">Senha</label>
+
+            <div class="senha-gerada">
+
+                <input
+                    type="text"
+                    id="campo-senha"
+                    readonly>
+
+                <button id="copiar">
+                    📋
+                </button>
+
+            </div>
+
+        </div>
+
+        <section class="parametro">
+
+            <h2 class="parametro-titulo">
+                Personalize sua senha
+            </h2>
+
+            <div class="parametro-coluna__senha">
+
+                <div class="parametro-senha">
+
+                    <h3 class="parametro-senha__titulo">
+                        Número de caracteres
+                    </h3>
+
+                    <div class="parametro-senha-botoes">
+
+                        <button class="parametro-senha__botao">
+                            −
+                        </button>
+
+                        <p class="parametro-senha__texto">
+                            12
+                        </p>
+
+                        <button class="parametro-senha__botao">
+                            +
+                        </button>
+
+                    </div>
+
                 </div>
-                <p id="mensagem-ia" class="status-text">Status da IA: Aguardando dados.</p>
+
+                <div class="parametro-senha">
+
+                    <h3 class="parametro-senha__titulo">
+                        Características da senha
+                    </h3>
+
+                    <div class="parametro-senha-checkbox">
+                        <input type="checkbox" id="maiusculo" checked>
+                        <label for="maiusculo">Letras maiúsculas</label>
+                    </div>
+
+                    <div class="parametro-senha-checkbox">
+                        <input type="checkbox" id="minusculo" checked>
+                        <label for="minusculo">Letras minúsculas</label>
+                    </div>
+
+                    <div class="parametro-senha-checkbox">
+                        <input type="checkbox" id="numero" checked>
+                        <label for="numero">Números</label>
+                    </div>
+
+                    <div class="parametro-senha-checkbox">
+                        <input type="checkbox" id="simbolo" checked>
+                        <label for="simbolo">Símbolos</label>
+                    </div>
+
+                </div>
+
             </div>
-            
-            <button id="btn-treinar" class="btn">Treinar Inteligência Artificial</button>
+
+            <div class="parametro-senha parametro-forca">
+
+                <h3 class="parametro-senha__titulo">
+                    Força da senha
+                </h3>
+
+                <div class="barra-forca">
+
+                    <div id="nivel-forca"></div>
+
+                </div>
+
+                <div class="legenda-forca">
+
+                    <span>Fraca</span>
+                    <span>Média</span>
+                    <span>Forte</span>
+
+                </div>
+
+                <p id="tempo-forca">
+                    Um computador levaria poucos segundos para descobrir essa senha.
+                </p>
+
+            </div>
+
         </section>
 
-        <section class="card">
-            <div class="header-seguranca">
-                <h2>Segurança Digital: Validador de Senhas</h2>
-                <img src="unlock.svg" alt="Cadeado" class="icone-cadeado" id="icone-seguranca">
-            </div>
-            <p>Utilize conceitos matemáticos e lógicos para garantir que suas senhas sejam fortes e protegidas.</p>
-            
-            <div class="input-group">
-                <label for="campo-senha">Digite sua senha para testar:</label>
-                <input type="password" id="campo-senha" placeholder="Sua senha secreta...">
-            </div>
-            
-            <div id="resultado-senha" class="feedback-box">
-                Digite uma senha para iniciar a análise de segurança.
-            </div>
-        </section>
+    </section>
 
-    </main>
+    <script src="main.js"></script>
 
-    <footer>
-        <p>&copy; 2026 - Desenvolvimento Front-End, Segurança e Tecnologia</p>
-    </footer>
-
-    <script>
-        // === LÓGICA DA MISSÃO IA ===
-        const botaoTreinar = document.getElementById('btn-treinar');
-        const exibicaoPontos = document.getElementById('pontos-ia');
-        const mensagemIA = document.getElementById('mensagem-ia');
-        const barraProgresso = document.getElementById('barra-progresso');
-
-        let pontosTreino = 0;
-
-        botaoTreinar.addEventListener('click', function() {
-            if (pontosTreino < 100) {
-                pontosTreino += 10;
-                exibicaoPontos.textContent = pontosTreino;
-                barraProgresso.style.width = pontosTreino + '%';
-                
-                if (pontosTreino >= 10 && pontosTreino < 40) {
-                    mensagemIA.textContent = "Status da IA: Processando dados iniciais...";
-                    mensagemIA.style.color = "#37474f";
-                } else if (pontosTreino >= 40 && pontosTreino < 80) {
-                    mensagemIA.textContent = "Status da IA: Ajustando redes neurais...";
-                    mensagemIA.style.color = "#f57c00";
-                } else if (pontosTreino >= 80 && pontosTreino < 100) {
-                    mensagemIA.textContent = "Status da IA: Otimização avançada!";
-                    mensagemIA.style.color = "#0288d1";
-                } else if (pontosTreino >= 100) {
-                    mensagemIA.textContent = "Status da IA: Concluído! Modelo treinado com sucesso.";
-                    mensagemIA.style.color = "#388e3c";
-                    botaoTreinar.disabled = true;
-                }
-            }
-        });
-
-        // === LÓGICA DA SEGURANÇA DIGITAL ===
-        const campoSenha = document.getElementById('campo-senha');
-        const resultadoSenha = document.getElementById('resultado-senha');
-
-        campoSenha.addEventListener('input', function() {
-            const senha = campoSenha.value;
-            
-            if (senha.length === 0) {
-                resultadoSenha.textContent = "Digite uma senha para iniciar a análise de segurança.";
-                resultadoSenha.className = "feedback-box";
-                return;
-            }
-
-            const comprimentoMinimo = 8;
-            const contemNumero = /\d/.test(senha);
-            const contemMaiuscula = /[A-Z]/.test(senha);
-            
-            if (senha.length < comprimentoMinimo) {
-                resultadoSenha.textContent = "Segurança Fraca: Mínimo de " + comprimentoMinimo + " caracteres.";
-                resultadoSenha.className = "feedback-box senha-fraca";
-            } else if (!contemNumero) {
-                resultadoSenha.textContent = "Segurança Média: Boa quantidade de caracteres, mas adicione números.";
-                resultadoSenha.className = "feedback-box senha-media";
-            } else if (!contemMaiuscula) {
-                resultadoSenha.textContent = "Segurança Boa: Falta uma letra maiúscula para aumentar a complexidade.";
-                resultadoSenha.className = "feedback-box senha-media";
-            } else {
-                resultadoSenha.textContent = "Segurança Forte: Excelente! Senha altamente protegida.";
-                resultadoSenha.className = "feedback-box senha-forte";
-            }
-        });
-    </script>
 </body>
+
 </html>
