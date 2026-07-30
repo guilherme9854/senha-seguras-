@@ -4,11 +4,11 @@
 /* Definindo a paleta de cores e variáveis globais refinadas */
 :root {
     --branco: #FFFFFF;
-    --azul-escuro: #030a16;       /* Fundo profundo estilo 'Dark Mode' premium */
-    --azul-degrade: #0a192f;      /* Tom secundário para o gradiente de fundo */
-    --azul: #0f223d;              /* Fundo do painel da senha */
-    --azul-card: #132847;         /* Fundo do card principal */
-    --azul-claro: #0075FF;        /* Cor de destaque (Acento) */
+    --azul-escuro: #000000;       /* Fundo profundo estilo 'Dark Mode' premium */
+    --azul-degrade: #15181b;      /* Tom secundário para o gradiente de fundo */
+    --azul: #2d2e30;              /* Fundo do painel da senha */
+    --azul-card: #68696b;         /* Fundo do card principal */
+    --azul-claro: #495563;        /* Cor de destaque (Acento) */
     --azul-claro-hover: #3392FF;  /* Cor de destaque ao passar o rato */
     --borda-suave: #1e3b66;       /* Cor para bordas elegantes */
     
