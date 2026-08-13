@@ -21,25 +21,24 @@
         </header>
 
         <section class="card-senha">
-            <span class="label-badge">Sua Senha Segura</span>
+            <span class="label-badge">Sua Senha Gerada</span>
             <div class="senha-box">
                 <input type="text" id="campo-senha" readonly value="#pEF9F+y#a!v1">
                 <button id="copiar" title="Copiar senha">
-                    <span class="icone-copiar">📋</span>
-                    <span class="texto-copiar">Copiar</span>
+                    📋 Copiar
                 </button>
             </div>
         </section>
 
         <section class="card-config">
-            <h2 class="config-titulo">Personalizar Configurações</h2>
+            <h2 class="config-titulo">Opções de Personalização</h2>
 
             <div class="grid-config">
                 
-                <div class="grupo-controle controle-comprimento">
+                <div class="grupo-controle">
                     <div class="header-controle">
-                        <label for="range-caracteres">Número de caracteres</label>
-                        <span class="parametro-senha__texto" id="valor-tamanho">12</span>
+                        <label for="range-caracteres">Tamanho da senha</label>
+                        <span class="parametro-senha__texto" id="valor-tamanho">12 caracteres</span>
                     </div>
 
                     <div class="slider-wrapper">
@@ -50,31 +49,31 @@
                 </div>
 
                 <div class="grupo-controle">
-                    <label class="label-grupo">Incluir no Gerador</label>
+                    <label class="label-grupo">Regras de caracteres</label>
                     <div class="grid-opcoes">
 
                         <label class="toggle-option">
+                            <span class="toggle-label">Letras maiúsculas (A-Z)</span>
                             <input type="checkbox" id="maiusculo" checked>
                             <span class="toggle-switch"></span>
-                            <span class="toggle-label">Letras maiúsculas (A-Z)</span>
                         </label>
 
                         <label class="toggle-option">
+                            <span class="toggle-label">Letras minúsculas (a-z)</span>
                             <input type="checkbox" id="minusculo" checked>
                             <span class="toggle-switch"></span>
-                            <span class="toggle-label">Letras minúsculas (a-z)</span>
                         </label>
 
                         <label class="toggle-option">
+                            <span class="toggle-label">Números (0-9)</span>
                             <input type="checkbox" id="numero" checked>
                             <span class="toggle-switch"></span>
-                            <span class="toggle-label">Números (0-9)</span>
                         </label>
 
                         <label class="toggle-option">
+                            <span class="toggle-label">Símbolos (!@#$)</span>
                             <input type="checkbox" id="simbolo" checked>
                             <span class="toggle-switch"></span>
-                            <span class="toggle-label">Símbolos (!@#$)</span>
                         </label>
 
                     </div>
@@ -83,7 +82,7 @@
             </div>
 
             <button id="btn-gerar" class="btn-principal">
-                <span>🔄 Gerar Nova Senha</span>
+                🔄 Gerar Nova Senha
             </button>
 
             <div class="card-forca">
