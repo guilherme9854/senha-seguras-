@@ -4,140 +4,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerador de Senhas</title>
-
+    <title>Gerador de Senhas Pro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <section class="conteudo">
+    <main class="app-container">
 
-        <div class="conteudo-titulo">
-            <img src="unlock.svg" alt="Cadeado" width="60">
+        <header class="app-header">
+            <div class="icone-wrapper">
+                <img src="unlock.svg" alt="Cadeado de Segurança" class="app-logo">
+            </div>
+            <h1 class="titulo-principal">Gerador de Senhas</h1>
+            <p class="titulo-secundario">Crie combinações de alta segurança instantaneamente</p>
+        </header>
 
-            <h1 class="titulo-principal">
-                Gerador de Senhas
-            </h1>
-
-            <h2 class="titulo-secundario">
-                Gere instantaneamente uma senha aleatória e segura
-            </h2>
-        </div>
-
-        <div class="conteudo-senha">
-
-            <label for="campo-senha">Senha</label>
-
-            <div class="senha-gerada">
-
-                <input
-                    type="text"
-                    id="campo-senha"
-                    readonly>
-
-                <button id="copiar">
-                    📋
+        <section class="card-senha">
+            <span class="label-badge">Sua Senha Segura</span>
+            <div class="senha-box">
+                <input type="text" id="campo-senha" readonly value="#pEF9F+y#a!v1">
+                <button id="copiar" title="Copiar senha">
+                    <span class="icone-copiar">📋</span>
+                    <span class="texto-copiar">Copiar</span>
                 </button>
-
             </div>
+        </section>
 
-        </div>
+        <section class="card-config">
+            <h2 class="config-titulo">Personalizar Configurações</h2>
 
-        <section class="parametro">
-
-            <h2 class="parametro-titulo">
-                Personalize sua senha
-            </h2>
-
-            <div class="parametro-coluna__senha">
-
-                <div class="parametro-senha">
-
-                    <h3 class="parametro-senha__titulo">
-                        Número de caracteres
-                    </h3>
-
-                    <div class="parametro-senha-botoes">
-
-                        <button class="parametro-senha__botao">
-                            −
-                        </button>
-
-                        <p class="parametro-senha__texto">
-                            12
-                        </p>
-
-                        <button class="parametro-senha__botao">
-                            +
-                        </button>
-
+            <div class="grid-config">
+                
+                <div class="grupo-controle controle-comprimento">
+                    <div class="header-controle">
+                        <label for="range-caracteres">Número de caracteres</label>
+                        <span class="parametro-senha__texto" id="valor-tamanho">12</span>
                     </div>
 
+                    <div class="slider-wrapper">
+                        <button class="parametro-senha__botao" id="btn-menos">−</button>
+                        <input type="range" id="range-caracteres" min="4" max="32" value="12" class="range-slider">
+                        <button class="parametro-senha__botao" id="btn-mais">+</button>
+                    </div>
                 </div>
 
-                <div class="parametro-senha">
+                <div class="grupo-controle">
+                    <label class="label-grupo">Incluir no Gerador</label>
+                    <div class="grid-opcoes">
 
-                    <h3 class="parametro-senha__titulo">
-                        Características da senha
-                    </h3>
+                        <label class="toggle-option">
+                            <input type="checkbox" id="maiusculo" checked>
+                            <span class="toggle-switch"></span>
+                            <span class="toggle-label">Letras maiúsculas (A-Z)</span>
+                        </label>
 
-                    <div class="parametro-senha-checkbox">
-                        <input type="checkbox" id="maiusculo" checked>
-                        <label for="maiusculo">Letras maiúsculas</label>
+                        <label class="toggle-option">
+                            <input type="checkbox" id="minusculo" checked>
+                            <span class="toggle-switch"></span>
+                            <span class="toggle-label">Letras minúsculas (a-z)</span>
+                        </label>
+
+                        <label class="toggle-option">
+                            <input type="checkbox" id="numero" checked>
+                            <span class="toggle-switch"></span>
+                            <span class="toggle-label">Números (0-9)</span>
+                        </label>
+
+                        <label class="toggle-option">
+                            <input type="checkbox" id="simbolo" checked>
+                            <span class="toggle-switch"></span>
+                            <span class="toggle-label">Símbolos (!@#$)</span>
+                        </label>
+
                     </div>
-
-                    <div class="parametro-senha-checkbox">
-                        <input type="checkbox" id="minusculo" checked>
-                        <label for="minusculo">Letras minúsculas</label>
-                    </div>
-
-                    <div class="parametro-senha-checkbox">
-                        <input type="checkbox" id="numero" checked>
-                        <label for="numero">Números</label>
-                    </div>
-
-                    <div class="parametro-senha-checkbox">
-                        <input type="checkbox" id="simbolo" checked>
-                        <label for="simbolo">Símbolos</label>
-                    </div>
-
                 </div>
 
             </div>
 
-            <div class="parametro-senha parametro-forca">
+            <button id="btn-gerar" class="btn-principal">
+                <span>🔄 Gerar Nova Senha</span>
+            </button>
 
-                <h3 class="parametro-senha__titulo">
-                    Força da senha
-                </h3>
+            <div class="card-forca">
+                <div class="header-forca">
+                    <span>Força da Senha</span>
+                    <span id="badge-nivel" class="badge-status">Forte</span>
+                </div>
 
                 <div class="barra-forca">
-
                     <div id="nivel-forca"></div>
-
                 </div>
 
                 <div class="legenda-forca">
-
                     <span>Fraca</span>
                     <span>Média</span>
                     <span>Forte</span>
-
                 </div>
 
                 <p id="tempo-forca">
-                    Um computador levaria poucos segundos para descobrir essa senha.
+                    Um computador levaria milhões de anos para descobrir esta senha.
                 </p>
-
             </div>
 
         </section>
 
-    </section>
+    </main>
 
     <script src="main.js"></script>
-
 </body>
 
 </html>

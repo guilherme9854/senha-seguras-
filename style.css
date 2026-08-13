@@ -1,32 +1,29 @@
-/* Importação das fontes do Google */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap');
+/* Importação das fontes modernizadas */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@700&display=swap');
 
-/* Definindo a paleta de cores e variáveis globais refinadas */
 :root {
-    --bg-fundo: #0c0f12;
-    --card-bg: rgba(26, 31, 38, 0.75);
-    --card-borda: rgba(255, 255, 255, 0.08);
+    --bg-fundo: #090d16;
+    --card-bg: rgba(18, 24, 38, 0.85);
+    --card-border: rgba(255, 255, 255, 0.07);
+    --input-bg: #0e1422;
+    --input-border: rgba(255, 255, 255, 0.12);
+
+    /* Cores Neons e Destaques */
+    --primary: #6366f1;           /* Roxo Violeta */
+    --primary-hover: #4f46e5;
+    --cyan-neon: #06b6d4;         /* Azul Ciano */
+    --green-neon: #10b981;        /* Verde Esmeralda */
+    --green-glow: rgba(16, 185, 129, 0.25);
     
-    --input-bg: #13171d;
-    --input-borda: rgba(255, 255, 255, 0.12);
-    
-    --acento: #00e676;             /* Verde neon vibrante */
-    --acento-glow: rgba(0, 230, 118, 0.25);
-    --acento-hover: #00c853;
-    
-    --texto-principal: #f1f5f9;
+    --texto-principal: #f8fafc;
     --texto-secundario: #94a3b8;
     --texto-mutado: #64748b;
 
-    --fonte-corpo: 'Inter', sans-serif;
-    --fonte-code: 'JetBrains Mono', monospace;
-    
-    --transicao: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    --raio-card: 20px;
-    --raio-elem: 12px;
+    --font-ui: 'Plus Jakarta Sans', sans-serif;
+    --font-code: 'Space Mono', monospace;
+    --transicao: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Reset global */
 * {
     margin: 0;
     padding: 0;
@@ -34,287 +31,320 @@
 }
 
 body {
-    background: radial-gradient(circle at 50% 0%, #1a2332 0%, var(--bg-fundo) 70%);
+    background: radial-gradient(circle at 50% -20%, #1e1b4b 0%, #090d16 60%);
     color: var(--texto-principal);
-    font-family: var(--fonte-corpo);
+    font-family: var(--font-ui);
     min-height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
-    padding: 20px;
+    align-items: center;
+    padding: 30px 15px;
 }
 
-/* Container Principal */
-.conteudo {
+.app-container {
     width: 100%;
-    max-width: 680px;
-    margin: 0 auto;
+    max-width: 650px;
 }
 
-/* ---------- CABEÇALHO ---------- */
-
-.conteudo-titulo {
+/* HEADER */
+.app-header {
     text-align: center;
-    margin-bottom: 32px;
+    margin-bottom: 28px;
 }
 
-.conteudo-titulo img {
-    width: 48px;
-    height: 48px;
-    margin-bottom: 16px;
-    filter: drop-shadow(0 0 12px var(--acento-glow));
+.icone-wrapper {
+    display: inline-flex;
+    padding: 14px;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 20px;
+    margin-bottom: 14px;
+    box-shadow: 0 0 25px rgba(99, 102, 241, 0.15);
+}
+
+.app-logo {
+    width: 40px;
+    height: 40px;
 }
 
 .titulo-principal {
-    font-family: var(--fonte-corpo);
-    font-size: 32px;
+    font-size: 30px;
     font-weight: 700;
     letter-spacing: -0.5px;
-    margin-bottom: 8px;
     color: #ffffff;
+    margin-bottom: 6px;
 }
 
 .titulo-secundario {
-    font-size: 15px;
+    font-size: 14px;
     color: var(--texto-secundario);
-    font-weight: 400;
 }
 
-/* ---------- DISPLAY DA SENHA ---------- */
-
-.conteudo-senha {
+/* CARD DA SENHA */
+.card-senha {
     background: var(--card-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    padding: 24px;
-    border-radius: var(--raio-card);
-    border: 1px solid var(--card-borda);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(16px);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    margin-bottom: 24px;
     position: relative;
-    overflow: hidden;
 }
 
-.conteudo-senha::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--acento), transparent);
-}
-
-.conteudo-senha label {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 12px;
-    font-weight: 600;
+.label-badge {
+    font-size: 11px;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1.2px;
-    color: var(--texto-secundario);
+    letter-spacing: 1px;
+    color: var(--cyan-neon);
+    margin-bottom: 8px;
+    display: block;
 }
 
-.senha-gerada {
+.senha-box {
     display: flex;
     align-items: center;
     gap: 12px;
     background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 14px;
     padding: 8px 8px 8px 18px;
-    border-radius: var(--raio-elem);
-    border: 1px solid var(--input-borda);
     transition: var(--transicao);
 }
 
-.senha-gerada:focus-within {
-    border-color: var(--acento);
-    box-shadow: 0 0 0 3px var(--acento-glow);
+.senha-box:focus-within {
+    border-color: var(--cyan-neon);
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.2);
 }
 
 #campo-senha {
     width: 100%;
     background: transparent;
     border: none;
-    color: var(--acento);
-    font-size: 22px;
-    font-family: var(--fonte-code);
-    font-weight: 700;
+    outline: none;
+    color: #ffffff;
+    font-family: var(--font-code);
+    font-size: 20px;
     letter-spacing: 1.5px;
 }
 
-#campo-senha:focus {
-    outline: none;
+#copiar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--primary);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 18px;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: var(--transicao);
+    white-space: nowrap;
 }
 
-#copiar {
-    width: 46px;
-    height: 46px;
-    border: none;
+#copiar:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+/* CARD CONFIGURAÇÕES */
+.card-config {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(16px);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.config-titulo {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--card-border);
+    color: #ffffff;
+}
+
+.grid-config {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.header-controle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.header-controle label, .label-grupo {
+    font-size: 13px;
+    color: var(--texto-secundario);
+    font-weight: 600;
+}
+
+.parametro-senha__texto {
+    font-family: var(--font-code);
+    font-size: 16px;
+    color: var(--cyan-neon);
+    background: rgba(6, 182, 212, 0.1);
+    padding: 2px 10px;
+    border-radius: 6px;
+}
+
+.slider-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--input-bg);
+    padding: 8px 12px;
+    border-radius: 12px;
+    border: 1px solid var(--input-border);
+}
+
+.range-slider {
+    flex: 1;
+    accent-color: var(--cyan-neon);
+    cursor: pointer;
+}
+
+.parametro-senha__botao {
+    width: 32px;
+    height: 32px;
     background: rgba(255, 255, 255, 0.05);
+    border: none;
     color: var(--texto-principal);
     border-radius: 8px;
     font-size: 18px;
     cursor: pointer;
+    transition: var(--transicao);
+}
+
+.parametro-senha__botao:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* TOGGLES / INTERRUPTORES */
+.grid-opcoes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.toggle-option {
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 10px;
+    background: var(--input-bg);
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid var(--input-border);
+    cursor: pointer;
+    transition: var(--transicao);
+}
+
+.toggle-option:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.toggle-option input {
+    display: none;
+}
+
+.toggle-switch {
+    width: 36px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    position: relative;
     transition: var(--transicao);
     flex-shrink: 0;
 }
 
-#copiar:hover {
-    background: var(--acento);
-    color: #000;
-    box-shadow: 0 0 15px var(--acento-glow);
-    transform: scale(1.03);
-}
-
-#copiar:active {
-    transform: scale(0.97);
-}
-
-/* ---------- CARD DE CONFIGURAÇÕES ---------- */
-
-.parametro {
-    background: var(--card-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--card-borda);
-    border-radius: var(--raio-card);
-    padding: 32px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-}
-
-.parametro-titulo {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 28px;
-    border-bottom: 1px solid var(--card-borda);
-    padding-bottom: 16px;
-    color: #ffffff;
-}
-
-/* ---------- COLUNAS ---------- */
-
-.parametro-coluna__senha {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-}
-
-.parametro-senha__titulo {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--texto-secundario);
-    margin-bottom: 16px;
-}
-
-/* ---------- CONTROLADOR DE TAMANHO ---------- */
-
-.parametro-senha-botoes {
-    display: inline-flex;
-    align-items: center;
-    background: var(--input-bg);
-    border-radius: var(--raio-elem);
-    padding: 4px;
-    border: 1px solid var(--input-borda);
-}
-
-.parametro-senha__botao {
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.04);
-    border: none;
-    color: var(--texto-principal);
-    font-size: 20px;
-    font-weight: 600;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: var(--transicao);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.parametro-senha__botao:hover {
-    background: rgba(255, 255, 255, 0.12);
-    color: var(--acento);
-}
-
-.parametro-senha__texto {
-    width: 48px;
-    text-align: center;
-    font-size: 18px;
-    font-family: var(--fonte-code);
-    font-weight: 700;
-    color: var(--acento);
-}
-
-/* ---------- CHECKBOXES ---------- */
-
-.parametro-senha-checkbox {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 14px;
-}
-
-.parametro-senha-checkbox input[type="checkbox"] {
-    appearance: none;
-    -webkit-appearance: none;
-    width: 20px;
-    height: 20px;
-    background: var(--input-bg);
-    border: 1px solid var(--input-borda);
-    border-radius: 6px;
-    cursor: pointer;
-    position: relative;
-    transition: var(--transicao);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.parametro-senha-checkbox input[type="checkbox"]:hover {
-    border-color: var(--acento);
-}
-
-.parametro-senha-checkbox input[type="checkbox"]:checked {
-    background: var(--acento);
-    border-color: var(--acento);
-    box-shadow: 0 0 10px var(--acento-glow);
-}
-
-.parametro-senha-checkbox input[type="checkbox"]:checked::after {
+.toggle-switch::after {
     content: '';
-    width: 4px;
-    height: 9px;
-    border: solid #000;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
-    margin-bottom: 2px;
-}
-
-.parametro-senha-checkbox label {
-    font-size: 14px;
-    color: var(--texto-secundario);
-    cursor: pointer;
-    user-select: none;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #ffffff;
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
     transition: var(--transicao);
 }
 
-.parametro-senha-checkbox input[type="checkbox"]:checked + label {
+.toggle-option input:checked + .toggle-switch {
+    background: var(--cyan-neon);
+}
+
+.toggle-option input:checked + .toggle-switch::after {
+    transform: translateX(16px);
+}
+
+.toggle-label {
+    font-size: 12px;
+    color: var(--texto-secundario);
+    font-weight: 500;
+}
+
+.toggle-option input:checked ~ .toggle-label {
     color: var(--texto-principal);
 }
 
-/* ---------- INDICADOR DE FORÇA ---------- */
+/* BOTÃO PRINCIPAL DE GERAR */
+.btn-principal {
+    width: 100%;
+    margin-top: 24px;
+    padding: 14px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--cyan-neon) 100%);
+    border: none;
+    border-radius: 12px;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: var(--transicao);
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+}
 
-.parametro-forca {
-    margin-top: 32px;
+.btn-principal:hover {
+    opacity: 0.95;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 25px rgba(6, 182, 212, 0.4);
+}
+
+/* FORÇA DA SENHA */
+.card-forca {
+    margin-top: 24px;
     background: var(--input-bg);
-    padding: 20px;
-    border-radius: var(--raio-elem);
-    border: 1px solid var(--input-borda);
+    border: 1px solid var(--input-border);
+    border-radius: 14px;
+    padding: 16px;
+}
+
+.header-forca {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--texto-secundario);
+    font-weight: 600;
+}
+
+.badge-status {
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--green-neon);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
 }
 
 .barra-forca {
@@ -323,50 +353,47 @@ body {
     background: rgba(255, 255, 255, 0.08);
     border-radius: 10px;
     overflow: hidden;
-    margin: 12px 0;
+    margin: 12px 0 8px;
 }
 
 #nivel-forca {
-    width: 0%;
+    width: 80%;
     height: 100%;
-    background: var(--acento);
+    background: var(--green-neon);
     border-radius: 10px;
-    transition: width 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
-    box-shadow: 0 0 8px var(--acento-glow);
+    box-shadow: 0 0 10px var(--green-glow);
+    transition: var(--transicao);
 }
 
 .legenda-forca {
     display: flex;
     justify-content: space-between;
+    font-size: 11px;
     color: var(--texto-mutado);
-    margin-bottom: 12px;
-    font-size: 12px;
-    font-weight: 500;
+    margin-bottom: 10px;
 }
 
 #tempo-forca {
+    font-size: 12px;
     color: var(--texto-secundario);
-    font-size: 13px;
-    line-height: 1.5;
+    line-height: 1.4;
+    border-top: 1px solid var(--input-border);
+    padding-top: 10px;
+    margin-top: 6px;
 }
 
-/* ---------- RESPONSIVIDADE ---------- */
-
-@media (max-width: 640px) {
-    .parametro-coluna__senha {
+/* RESPONSIVIDADE */
+@media (max-width: 580px) {
+    .grid-opcoes {
         grid-template-columns: 1fr;
-        gap: 24px;
     }
 
-    .parametro {
-        padding: 24px;
+    .senha-box {
+        flex-direction: column;
+        align-items: stretch;
     }
 
-    .titulo-principal {
-        font-size: 26px;
-    }
-
-    #campo-senha {
-        font-size: 18px;
+    #copiar {
+        justify-content: center;
     }
 }
