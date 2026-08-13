@@ -4,15 +4,15 @@
 :root {
     --bg-fundo: #090d16;
     --card-bg: rgba(18, 24, 38, 0.85);
-    --card-border: rgba(255, 255, 255, 0.07);
+    --card-border: rgba(255, 255, 255, 0.08);
     --input-bg: #0e1422;
     --input-border: rgba(255, 255, 255, 0.12);
 
     /* Cores Neons e Destaques */
-    --primary: #6366f1;           /* Roxo Violeta */
+    --primary: #6366f1;
     --primary-hover: #4f46e5;
-    --cyan-neon: #06b6d4;         /* Azul Ciano */
-    --green-neon: #10b981;        /* Verde Esmeralda */
+    --cyan-neon: #06b6d4;
+    --green-neon: #10b981;
     --green-glow: rgba(16, 185, 129, 0.25);
     
     --texto-principal: #f8fafc;
@@ -38,45 +38,45 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px 15px;
+    padding: 50px 20px;
 }
 
 .app-container {
     width: 100%;
-    max-width: 650px;
+    max-width: 680px;
 }
 
 /* HEADER */
 .app-header {
     text-align: center;
-    margin-bottom: 28px;
+    margin-bottom: 36px;
 }
 
 .icone-wrapper {
     display: inline-flex;
-    padding: 14px;
+    padding: 16px;
     background: rgba(99, 102, 241, 0.1);
     border: 1px solid rgba(99, 102, 241, 0.2);
     border-radius: 20px;
-    margin-bottom: 14px;
+    margin-bottom: 18px;
     box-shadow: 0 0 25px rgba(99, 102, 241, 0.15);
 }
 
 .app-logo {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
 }
 
 .titulo-principal {
-    font-size: 30px;
+    font-size: 32px;
     font-weight: 700;
     letter-spacing: -0.5px;
     color: #ffffff;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .titulo-secundario {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--texto-secundario);
 }
 
@@ -85,31 +85,30 @@ body {
     background: var(--card-bg);
     border: 1px solid var(--card-border);
     backdrop-filter: blur(16px);
-    border-radius: 20px;
-    padding: 20px;
-    margin-bottom: 20px;
+    border-radius: 24px;
+    padding: 28px;
+    margin-bottom: 28px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    position: relative;
 }
 
 .label-badge {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
     color: var(--cyan-neon);
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     display: block;
 }
 
 .senha-box {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
     background: var(--input-bg);
     border: 1px solid var(--input-border);
-    border-radius: 14px;
-    padding: 8px 8px 8px 18px;
+    border-radius: 16px;
+    padding: 12px 12px 12px 20px;
     transition: var(--transicao);
 }
 
@@ -125,7 +124,7 @@ body {
     outline: none;
     color: #ffffff;
     font-family: var(--font-code);
-    font-size: 20px;
+    font-size: 22px;
     letter-spacing: 1.5px;
 }
 
@@ -136,10 +135,10 @@ body {
     background: var(--primary);
     color: #ffffff;
     border: none;
-    border-radius: 10px;
-    padding: 12px 18px;
+    border-radius: 12px;
+    padding: 14px 22px;
     font-weight: 600;
-    font-size: 13px;
+    font-size: 14px;
     cursor: pointer;
     transition: var(--transicao);
     white-space: nowrap;
@@ -156,16 +155,16 @@ body {
     background: var(--card-bg);
     border: 1px solid var(--card-border);
     backdrop-filter: blur(16px);
-    border-radius: 20px;
-    padding: 28px;
+    border-radius: 24px;
+    padding: 36px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .config-titulo {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
-    margin-bottom: 24px;
-    padding-bottom: 12px;
+    margin-bottom: 32px;
+    padding-bottom: 16px;
     border-bottom: 1px solid var(--card-border);
     color: #ffffff;
 }
@@ -173,38 +172,38 @@ body {
 .grid-config {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 32px;
 }
 
 .header-controle {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
 }
 
 .header-controle label, .label-grupo {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--texto-secundario);
     font-weight: 600;
 }
 
 .parametro-senha__texto {
     font-family: var(--font-code);
-    font-size: 16px;
+    font-size: 18px;
     color: var(--cyan-neon);
     background: rgba(6, 182, 212, 0.1);
-    padding: 2px 10px;
-    border-radius: 6px;
+    padding: 4px 14px;
+    border-radius: 8px;
 }
 
 .slider-wrapper {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
     background: var(--input-bg);
-    padding: 8px 12px;
-    border-radius: 12px;
+    padding: 12px 18px;
+    border-radius: 16px;
     border: 1px solid var(--input-border);
 }
 
@@ -212,18 +211,22 @@ body {
     flex: 1;
     accent-color: var(--cyan-neon);
     cursor: pointer;
+    height: 6px;
 }
 
 .parametro-senha__botao {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     background: rgba(255, 255, 255, 0.05);
     border: none;
     color: var(--texto-principal);
-    border-radius: 8px;
-    font-size: 18px;
+    border-radius: 10px;
+    font-size: 20px;
     cursor: pointer;
     transition: var(--transicao);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .parametro-senha__botao:hover {
@@ -234,24 +237,24 @@ body {
 .grid-opcoes {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-top: 10px;
+    gap: 16px;
+    margin-top: 16px;
 }
 
 .toggle-option {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 14px;
     background: var(--input-bg);
-    padding: 12px;
-    border-radius: 12px;
+    padding: 16px 18px;
+    border-radius: 16px;
     border: 1px solid var(--input-border);
     cursor: pointer;
     transition: var(--transicao);
 }
 
 .toggle-option:hover {
-    border-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.25);
 }
 
 .toggle-option input {
@@ -259,8 +262,8 @@ body {
 }
 
 .toggle-switch {
-    width: 36px;
-    height: 20px;
+    width: 40px;
+    height: 22px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     position: relative;
@@ -271,8 +274,8 @@ body {
 .toggle-switch::after {
     content: '';
     position: absolute;
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
     background: #ffffff;
     border-radius: 50%;
     top: 3px;
@@ -285,11 +288,11 @@ body {
 }
 
 .toggle-option input:checked + .toggle-switch::after {
-    transform: translateX(16px);
+    transform: translateX(18px);
 }
 
 .toggle-label {
-    font-size: 12px;
+    font-size: 13px;
     color: var(--texto-secundario);
     font-weight: 500;
 }
@@ -301,14 +304,14 @@ body {
 /* BOTÃO PRINCIPAL DE GERAR */
 .btn-principal {
     width: 100%;
-    margin-top: 24px;
-    padding: 14px;
+    margin-top: 32px;
+    padding: 18px;
     background: linear-gradient(135deg, var(--primary) 0%, var(--cyan-neon) 100%);
     border: none;
-    border-radius: 12px;
+    border-radius: 16px;
     color: #ffffff;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 15px;
     cursor: pointer;
     transition: var(--transicao);
     box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
@@ -316,24 +319,24 @@ body {
 
 .btn-principal:hover {
     opacity: 0.95;
-    transform: translateY(-1px);
-    box-shadow: 0 6px 25px rgba(6, 182, 212, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(6, 182, 212, 0.4);
 }
 
 /* FORÇA DA SENHA */
 .card-forca {
-    margin-top: 24px;
+    margin-top: 32px;
     background: var(--input-bg);
     border: 1px solid var(--input-border);
-    border-radius: 14px;
-    padding: 16px;
+    border-radius: 18px;
+    padding: 24px;
 }
 
 .header-forca {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 13px;
+    font-size: 14px;
     color: var(--texto-secundario);
     font-weight: 600;
 }
@@ -341,19 +344,19 @@ body {
 .badge-status {
     background: rgba(16, 185, 129, 0.15);
     color: var(--green-neon);
-    padding: 4px 10px;
+    padding: 6px 14px;
     border-radius: 20px;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
 }
 
 .barra-forca {
     width: 100%;
-    height: 6px;
+    height: 8px;
     background: rgba(255, 255, 255, 0.08);
     border-radius: 10px;
     overflow: hidden;
-    margin: 12px 0 8px;
+    margin: 16px 0 10px;
 }
 
 #nivel-forca {
@@ -368,24 +371,28 @@ body {
 .legenda-forca {
     display: flex;
     justify-content: space-between;
-    font-size: 11px;
+    font-size: 12px;
     color: var(--texto-mutado);
-    margin-bottom: 10px;
+    margin-bottom: 14px;
 }
 
 #tempo-forca {
-    font-size: 12px;
+    font-size: 13px;
     color: var(--texto-secundario);
-    line-height: 1.4;
+    line-height: 1.5;
     border-top: 1px solid var(--input-border);
-    padding-top: 10px;
-    margin-top: 6px;
+    padding-top: 14px;
+    margin-top: 8px;
 }
 
 /* RESPONSIVIDADE */
-@media (max-width: 580px) {
+@media (max-width: 640px) {
     .grid-opcoes {
         grid-template-columns: 1fr;
+    }
+
+    .card-config {
+        padding: 24px;
     }
 
     .senha-box {
